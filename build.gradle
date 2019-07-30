@@ -1,0 +1,27 @@
+apply plugin: 'war'
+
+war {
+    baseName = 'myapp'
+    version =  '0.5.0'
+}
+
+repositories {
+    jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
+}
+
+configurations {
+    providedRuntime
+}
+
+//dependencies {
+  //  compile("org.springframework.boot:spring-boot-starter-web")
+  //  providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    
+//}
+
+dependencyManagement {
+     imports {
+          mavenBom 'org.springframework.boot:spring-boot-starter-parent:2.0.0.RELEASE'
+     }
+}

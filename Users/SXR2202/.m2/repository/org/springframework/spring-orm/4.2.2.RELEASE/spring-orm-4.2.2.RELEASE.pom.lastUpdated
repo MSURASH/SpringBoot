@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Jul 28 04:04:31 EDT 2019
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1564301071014
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.springframework\:spring-orm\:pom\:4.2.2.RELEASE from/to central (https\://repo.maven.apache.org/maven2)\: sun.security.validator.ValidatorException\: PKIX path building failed\: sun.security.provider.certpath.SunCertPathBuilderException\: unable to find valid certification path to requested target
