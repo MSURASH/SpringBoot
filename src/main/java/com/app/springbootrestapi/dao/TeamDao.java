@@ -16,4 +16,8 @@ public interface TeamDao extends JpaRepository<Team, Integer> {
 	
 	@Query(value = "SELECT TEAMS, CITY FROM team WHERE teams = :name", nativeQuery = true)
 	List<Object[]> findByName(String name);
+	
+	
+	
+	
 }

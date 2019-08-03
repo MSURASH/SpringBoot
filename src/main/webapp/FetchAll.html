@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fetch All Data</title>
+</head>
+<body>
+<nav>
+	<a href="Insert.html">INSERT</a>
+	<a href="Update.html">UPDATE</a>
+	<a href="Delete.html">DELETE</a>
+	<a href="Search.html">Search by Wildcard</a>
+	<a href="One.html">Search By ID</a>
+	<a href="Name.html">Search By Name</a>
+
+</nav>
+<button onclick="obj.load()">Load...</button>
+<ul id="ul" style="background-color:powderblue;"></ul>
+
+<script type="text/javascript">
+
+class Int{
+	constructor(){
+		this.intval = true;
+	}
+	
+	
+	load(){
+	console.log(this.intval);
+	if(this.intval){
+    let ul = document.getElementById("ul");
+	ul.innerHTML = "";
+    let request = new XMLHttpRequest();
+    request.open("GET", "http://localhost:8080/springbootrestapi/team/all" , false); //Fetch from JSON file
+    request.send(null);
+    let obj = JSON.parse(request.responseText);
+    let j = 0;
+
+    while(j < obj.length){
+
+       // document.getElementById('p').innerHTML = obj[j].ID +" "+obj[j].team+" "+obj[j].city;
+        let node = document.createElement("LI");  
+                       // Create a <li> node
+        let textnode = document.createTextNode(obj[j].id +" "+obj[j].teams+" "+obj[j].city);         // Create a text node
+        
+        node.appendChild(textnode);                              // Append the text to <li>
+        ul.appendChild(node); 
+        j++;
+      }
+      this.intval = false;
+      }else {
+                  this.intval = true;
+      
+      			document.getElementById("ul").innerHTML  = "";
+      
+      }
+
+}
+    
+}
+
+let obj = new Int();
+
+
+</script>
+</body>
+</html>

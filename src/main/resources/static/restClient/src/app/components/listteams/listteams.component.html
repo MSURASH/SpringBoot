@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <th>Id</th>
+    <th>Teams</th>
+    <th>City</th>
+    <th>Operations</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams">
+      <td>{{ team.id }}</td>
+      <td>{{ team.teams }}</td>
+      <td>{{ team.city }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteTeam(team)">
+          Delete
+        </button>
+        <button class="btn btn-primary" (click)="updateTeam(team)">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary" (click)="newTeam(team)">New Team</button>
